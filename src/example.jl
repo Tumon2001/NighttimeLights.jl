@@ -1,3 +1,5 @@
+using Pkg.Artifacts
+
 global radiance_datacube 
 global clouds_datacube 
 global mumbai_map 
@@ -7,13 +9,11 @@ The datacubes and the district level shapefile for Mumbai city are provided with
     """
     function load_example()
         println("Loading sample data")
-        package_path = pathof(NighttimeLights)
-        path_len = length(package_path)
-        assets_path = package_path[1:path_len-22] * "assets"
-        map_path = assets_path * "/mumbai_map/mumbai_districts.shp"
-        radiance_jld_path = assets_path * "/mumbai_ntl/datacube/mumbai_radiance.jld"
-        clouds_jld_path = assets_path * "/mumbai_ntl/datacube/mumbai_clouds.jld"
-        
+        assets_path = joinpath(artifact"assets-artifact", "assets")
+        map_path = joinpath(assets_path, "mumbai_map", "mumbai_districts.shp")
+        radiance_jld_path = joinpath(assets_path, "mumbai_ntl", "datacube", "mumbai_radiance.jld")
+        clouds_jld_path = joinpath(assets_path, "mumbai_ntl", "datacube", "mumbai_clouds.jld")
+                
         global radiance_datacube = load_datacube(radiance_jld_path)
         global clouds_datacube = load_datacube(clouds_jld_path)
         global mumbai_map = load_shapefile(map_path)
