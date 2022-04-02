@@ -1,6 +1,6 @@
-[assets]
+[assets-artifact]
 git-tree-sha1 = "bbb8018642299bce1befe72937b55829acd2c6a0"
 
-    [[assets.download]]
-    url = "https://github.com/xKDR/NighttimeLights.jl/blob/artifacts/assets.tar.gz"
-    sha256 = "66accf191d3df6f5c6e1d68160757bd1194e26c2c78b85a602498d22d4124cc6"
+    [[assets-artifact.download]]
+    sha256 = "5a2eddaa258c15ffc9e1b20fc565bdedde665f0d53224e119cca3e0518fe9886"
+    url = "https://github.com/xKDR/NighttimeLights.jl/blob/artifacts/artifacts/assets-artifact.tar.gz"
